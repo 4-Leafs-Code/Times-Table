@@ -1,0 +1,18 @@
+from tabulate import tabulate
+
+n = int(input("Enter a number: "))
+headers = []
+headers.append(" ")
+for i in range(1, n+1):
+    headers.append(i)
+
+table = []
+list = []
+for i in range(1, n+1):
+    list.append(str(i))
+    for j in range(1, n+1):
+        list.append(str(i * j))
+    table.append(list)
+    list = []
+
+print(tabulate(table, headers, tablefmt="pretty", stralign="right"))
